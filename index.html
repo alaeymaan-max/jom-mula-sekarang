@@ -9,36 +9,25 @@
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icons/icon-192x192.png">
 
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* CSS tambahan untuk memastikan font Lexend diutamakan */
         body {
             font-family: 'Lexend', sans-serif;
-            background-color: #f9fafb; /* Off-white yang menenangkan */
-        }
-        .soft-card {
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-        .btn-toggle {
-            transition: all 0.3s ease;
-        }
-        .btn-active {
-            background-color: #6366f1 !important;
-            color: white !important;
         }
     </style>
 </head>
-<body class="min-h-screen pb-12">
+<body class="min-h-screen pb-12 bg-[#f9fafb]">
 
     <nav class="p-6 flex justify-between items-center bg-white border-b border-gray-100 mb-8">
         <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl">J</div>
+            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-sm">J</div>
             <span class="text-xl font-semibold text-gray-800 tracking-tight">jom-mula</span>
         </div>
-        <button class="p-2 bg-gray-100 rounded-full">
+        <button class="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
@@ -71,12 +60,12 @@
 
         <section id="content-area">
             <div class="soft-card p-12 text-center text-gray-400">
-                <p>Memuatkan panduan yang sesuai untuk anda...</p>
+                <p class="animate-pulse">Memuatkan panduan yang sesuai untuk anda...</p>
             </div>
         </section>
 
         <div class="mt-8 flex justify-center">
-            <button id="next-step" class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-indigo-100 transition-all">
+            <button id="next-step" class="bg-indigo-500 hover:bg-indigo-600 text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-indigo-200 transition-all active:scale-95">
                 Mula Teroka Sekarang
             </button>
         </div>
