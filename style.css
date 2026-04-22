@@ -1,0 +1,99 @@
+/* jom-mula | style.css 
+    Custom Styling for Soft UI & Micro-interactions
+*/
+
+:root {
+    --primary: #6366f1;
+    --primary-soft: #e0e7ff;
+    --bg-light: #f9fafb;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Reset & Base */
+body {
+    -webkit-tap-highlight-color: transparent;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* 2. Soft UI Components */
+.soft-card {
+    transition: var(--transition);
+    border: 1px solid rgba(243, 244, 246, 1);
+}
+
+.soft-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. Button Styles & States */
+.profile-btn {
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+
+/* Animasi apabila butang ditekan (Feedback) */
+.profile-btn:active {
+    transform: scale(0.96);
+}
+
+/* Gaya Butang Aktif (Akan dipicu oleh JS) */
+.btn-active {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+/* 4. Progress Bar Customization */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--primary-soft);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%; /* Diubah oleh JS */
+    transition: width 0.5s ease-out;
+}
+
+/* 5. Mood Specific Adjustments (Dynamic Classes) */
+body.mode-paksa {
+    background-color: #fff1f2; /* Sedikit kemerahan jika mod paksa */
+}
+
+body.mode-paksa .primary-btn {
+    background-color: #f43f5e;
+}
+
+/* 6. PWA Splash Look (Mobile Optimization) */
+@media (max-width: 640px) {
+    .soft-card {
+        border-radius: 20px;
+        padding: 1.5rem !important;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* 7. Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#content-area {
+    animation: fadeIn 0.4s ease-out forwards;
+}
